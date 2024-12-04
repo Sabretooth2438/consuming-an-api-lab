@@ -1,6 +1,26 @@
+<head>
+  <link rel="stylesheet" href="/stylesheet/styles.css" />
+  <title>Weather Details</title>
+</head>
 <body>
-  <h1>Weather in <%= city %></h1>
-  <p>Temperature: <%= temp %>°F</p>
-  <p>Condition: <%= description %></p>
-  <a href="/">Back to home!</a>
+  <header>
+    <h1>Weather in <%= city %></h1>
+  </header>
+  <main>
+    <section>
+      <img
+        src="http://openweathermap.org/img/wn/<%= icon %>@2x.png"
+        alt="Weather icon showing <%= description %>"
+      />
+      <ul>
+        <li><strong>Temperature:</strong> <%= temp %>°F</li>
+        <li><strong>Condition:</strong> <%= description %></li>
+        <li><strong>Humidity:</strong> <%= humidity %>%</li>
+        <li><strong>Pressure:</strong> <%= pressure %> hPa</li>
+        <li><strong>Sunrise:</strong> <%= sunrise %></li>
+        <li><strong>Sunset:</strong> <%= sunset %></li>
+      </ul>
+    </section>
+    <a href="/">Back to Home</a>
+  </main>
 </body>

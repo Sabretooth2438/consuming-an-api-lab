@@ -1,0 +1,32 @@
+<head>
+  <link rel="stylesheet" href="/stylesheet/styles.css" />
+  <title>5-Day Weather Forecast</title>
+</head>
+<body>
+  <header>
+    <h1>5-Day Weather Forecast for <%= city %></h1>
+  </header>
+  <main>
+    <section>
+      <% Object.keys(groupedForecast).forEach(date => { %>
+      <div class="forecast-date">
+        <h2><%= date %></h2>
+        <div class="forecast-row">
+          <% groupedForecast[date].forEach(item => { %>
+          <div class="forecast-item">
+            <img
+              src="http://openweathermap.org/img/wn/<%= item.icon %>@2x.png"
+              alt="Weather icon showing <%= item.description %>"
+            />
+            <p><strong>Time:</strong> <%= item.time %></p>
+            <p><strong>Temp:</strong> <%= item.temp %>°F</p>
+            <p><strong>Condition:</strong> <%= item.description %></p>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <% }) %>
+    </section>
+    <a href="/">Back to Home</a>
+  </main>
+</body>
